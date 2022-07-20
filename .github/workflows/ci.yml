@@ -77,8 +77,8 @@ jobs:
 
       - name: Download dependencies
         run: |
-          composer require --no-update "guzzlehttp/psr7:${{ matrix.psr7 }}"
-          composer update --no-interaction --no-progress
+          composer require --no-update "guzzlehttp/psr7:${{ matrix.psr7 }}" --ignore-platform-reqs
+          composer update --no-interaction --no-progress --ignore-platform-reqs
 
       - name: Run tests
         run: make test
